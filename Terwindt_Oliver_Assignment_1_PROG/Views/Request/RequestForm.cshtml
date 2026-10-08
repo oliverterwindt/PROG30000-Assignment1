@@ -1,0 +1,44 @@
+﻿@using Terwindt_Oliver_Assignment_1_PROG.Models
+@model EquipmentRequest
+
+@{
+    ViewData["Title"] = "Request Form";
+}
+
+<form method="post" asp-action="RequestForm" asp-controller="Request">
+
+    <label asp-for="Name"></label>
+    <input asp-for="Name" class="form-control" />
+    <span asp-validation-for="Name" class="text-danger"></span>
+
+    <label asp-for="Email"></label>
+    <input asp-for="Email" class="form-control" />
+    <span asp-validation-for="Email" class="text-danger"></span>
+
+    <label asp-for="PhoneNumber"></label>
+    <input asp-for="PhoneNumber" class="form-control" />
+    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+
+    <label asp-for="Role"></label>
+    <select asp-for="Role" class="form-control" asp-items="Html.GetEnumSelectList<UserRole>()">
+        <option value="">What is your Role</option>
+    </select>
+    <span asp-validation-for="Role" class="text-danger"></span>
+
+    <label asp-for="EquipmentType"></label>
+    <select asp-for="EquipmentType" class="form-control" asp-items="Html.GetEnumSelectList<EquipmentType>()">
+        <option value="">Select an Equipment Type</option>
+    </select>
+    <span asp-validation-for="EquipmentType" class="text-danger"></span>
+
+    <label asp-for="Duration"></label>
+    <input asp-for="Duration" class="form-control" />
+    <span asp-validation-for="Duration" class="text-danger"></span>
+
+    <label asp-for="RequestDetails"></label>
+    <textarea asp-for="RequestDetails" class="form-control" rows="3"></textarea> 
+    <span asp-validation-for="RequestDetails" class="text-danger"></span>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
