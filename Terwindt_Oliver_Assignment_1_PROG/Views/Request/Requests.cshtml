@@ -1,0 +1,25 @@
+﻿@using Terwindt_Oliver_Assignment_1_PROG.Models
+@model IEnumerable<EquipmentRequest>
+
+<h1>Equipment Requests</h1>
+
+<table class="table">
+    <tr>
+        <th>Equipment Type</th>
+        <th>Name</th>
+        <th>Role</th>
+        <th></th>
+    </tr>
+    @foreach (var request in Model)
+    {
+        <tr>
+            <td>@request.EquipmentType</td>
+            <td>@request.Name</td>
+            <td>@request.Role</td>
+            <td>
+                <button class="btn btn-success btn-sm">Accept</button>
+                <button class="btn btn-danger btn-sm">Deny</button>
+            </td>
+        </tr>
+    }
+</table>

@@ -26,5 +26,12 @@ namespace Terwindt_Oliver_Assignment_1_PROG.Controllers
             // Validation failed: show the form again with the user's data and errors
             return View("RequestForm", request);
         }
+
+        // GET: /Requests - admin page listing all submitted requests (not linked in navbar)
+        [Route("Requests")]
+        public IActionResult Requests() // URL Localhostxxxx//requests
+        {
+            return View(Repository.Requests);   // Views/Request/Requests.cshtml
+        }
     }
 }
